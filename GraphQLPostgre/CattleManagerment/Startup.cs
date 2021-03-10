@@ -1,10 +1,13 @@
 using CattleManagerment.GraphQLModels.ObjectTypes;
 using CattleManagerment.Models;
+using HotChocolate.AspNetCore;
+using HotChocolate.AspNetCore.Playground;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -47,6 +50,7 @@ namespace CattleManagerment
                         ValidateIssuerSigningKey = true
                     };
                 });
+            services.AddEntityFrameworkNpgsql().AddDbContext<DataDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("MyWebApiConection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,9 +59,15 @@ namespace CattleManagerment
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UsePlayground(new PlaygroundOptions
+                {
+                    QueryPath = "/api",
+                    Path = "/playground"
+                });
             }
 
             app.UseHttpsRedirection();
+            app.UseGraphQL("/api");
 
             app.UseRouting();
             app.UseAuthentication();
