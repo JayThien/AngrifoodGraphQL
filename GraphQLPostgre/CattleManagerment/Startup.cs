@@ -1,3 +1,4 @@
+using CattleManagerment.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +26,10 @@ namespace CattleManagerment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddGraphQLServer().AddMutationType<MutationObjectType>();
+            services.AddGraphQLServer()
+            .AddQueryType<QuerObjectType>()
+            .AddMutationType<MutationObjectType>();
+            services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
