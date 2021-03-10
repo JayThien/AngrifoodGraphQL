@@ -11,9 +11,9 @@ namespace CattleManagerment
     {
         protected override void Configure(IObjectTypeDescriptor<Mutation> descriptor)
         {
-            descriptor.Field(_ => _.UserLogin(default))
-            .Type<StringType>()
+            descriptor.Field(_ => _.UserLogin(default, default))
             .Name("UserLogin")
+            .Type<StringType>()
             .Argument("login", a => a.Type<LoginInputObjectType>());
         }
     }

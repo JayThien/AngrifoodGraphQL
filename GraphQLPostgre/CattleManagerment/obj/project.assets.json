@@ -328,6 +328,21 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.7.1"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Authorization/3.1.0": {
         "type": "package",
         "dependencies": {
@@ -766,6 +781,32 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/6.7.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "6.7.1",
+          "Microsoft.IdentityModel.Tokens": "6.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.7.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "6.7.1",
+          "System.IdentityModel.Tokens.Jwt": "6.7.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
         }
       },
       "Microsoft.IdentityModel.Tokens/6.8.0": {
@@ -1294,6 +1335,21 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.4": {
+      "sha512": "gJ4v5Sh6AIzaz3okQ8pGuigTYfWAefaWfTobqU0YCKdsDMTUA1aAvcnVYqYUsb16vGcaVyWIBd4L8G9Ya5oU6w==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.5.0.4.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/3.1.0": {
@@ -1932,6 +1988,40 @@
         "microsoft.identitymodel.logging.nuspec"
       ]
     },
+    "Microsoft.IdentityModel.Protocols/6.7.1": {
+      "sha512": "DVGYIRUK3TkCTmz0IgBzWUE55CDNfLtXil1FgSbgHI7hi2fP2pz4tiTAno/5O/hdVwAzV+HtCQtFi7xW8smaHw==",
+      "type": "package",
+      "path": "microsoft.identitymodel.protocols/6.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.IdentityModel.Protocols.dll",
+        "lib/net45/Microsoft.IdentityModel.Protocols.xml",
+        "lib/net461/Microsoft.IdentityModel.Protocols.dll",
+        "lib/net461/Microsoft.IdentityModel.Protocols.xml",
+        "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll",
+        "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.xml",
+        "microsoft.identitymodel.protocols.6.7.1.nupkg.sha512",
+        "microsoft.identitymodel.protocols.nuspec"
+      ]
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.7.1": {
+      "sha512": "99gA+E6ZOCqySrT80Yh6wrfjJfeMxDisdAcA5Q66zHxMPY5Gzc8aT2Ldzu0GP1sADv/o3yI1Gc3P1GHXlXAVVQ==",
+      "type": "package",
+      "path": "microsoft.identitymodel.protocols.openidconnect/6.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+        "lib/net45/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
+        "lib/net461/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+        "lib/net461/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
+        "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll",
+        "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.xml",
+        "microsoft.identitymodel.protocols.openidconnect.6.7.1.nupkg.sha512",
+        "microsoft.identitymodel.protocols.openidconnect.nuspec"
+      ]
+    },
     "Microsoft.IdentityModel.Tokens/6.8.0": {
       "sha512": "gTqzsGcmD13HgtNePPcuVHZ/NXWmyV+InJgalW/FhWpII1D7V1k0obIseGlWMeA4G+tZfeGMfXr0klnWbMR/mQ==",
       "type": "package",
@@ -2498,6 +2588,7 @@
       "HotChocolate.AspNetCore >= 11.0.9",
       "HotChocolate.AspNetCore.Authorization >= 11.0.9",
       "HotChocolate.AspNetCore.Playground >= 10.5.5",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.4",
       "Microsoft.EntityFrameworkCore >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.3",
       "Microsoft.EntityFrameworkCore.Relational >= 5.0.3",
@@ -2507,31 +2598,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JayThien\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\hpthien\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
+      "projectUniqueName": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
       "projectName": "CattleManagerment",
-      "projectPath": "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
-      "packagesPath": "C:\\Users\\JayThien\\.nuget\\packages\\",
-      "outputPath": "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\obj\\",
+      "projectPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
+      "packagesPath": "C:\\Users\\hpthien\\.nuget\\packages\\",
+      "outputPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\JayThien\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+        "C:\\Users\\hpthien\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -2562,6 +2647,10 @@
           "HotChocolate.AspNetCore.Playground": {
             "target": "Package",
             "version": "[10.5.5, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[5.0.4, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -2610,7 +2699,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

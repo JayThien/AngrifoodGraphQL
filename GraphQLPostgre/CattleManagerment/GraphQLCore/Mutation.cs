@@ -1,7 +1,13 @@
 ﻿using CattleManagerment.Entities;
+using CattleManagerment.Models;
+using HotChocolate;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CattleManagerment
@@ -28,16 +34,27 @@ namespace CattleManagerment
 			}
 		};
 
-		public string UserLogin(LoginInput login)
+		public string UserLogin([Service] IOptions<TokenSettings> tokenSettings, LoginInput login)
 		{
-			var currentUser = Users.Where(u => u.Email.ToLower() == login.Email &&
-			u.Password == login.Password).FirstOrDefault();
+			var currentUser = Users.Where(_ => _.Email.ToLower() == login.Email.ToLower() &&
+			_.Password == login.Password).FirstOrDefault();
 
 			if (currentUser != null)
 			{
-				return "for now i'm dummy jwt access token";
+				var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenSettings.Value.Key));
+				var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
+
+				var jwtToken = new JwtSecurityToken(
+					issuer: tokenSettings.Value.Issuer,
+					audience: tokenSettings.Value.Audience,
+					expires: DateTime.Now.AddMinutes(20),
+					signingCredentials: credentials
+				);
+
+				return new JwtSecurityTokenHandler().WriteToken(jwtToken);
+
 			}
-			return string.Empty;
+			return "";
 		}
 	}
 }

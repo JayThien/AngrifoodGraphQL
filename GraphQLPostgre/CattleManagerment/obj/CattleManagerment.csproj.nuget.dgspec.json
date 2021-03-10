@@ -1,31 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj": {}
+    "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj": {}
   },
   "projects": {
-    "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj": {
+    "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
+        "projectUniqueName": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
         "projectName": "CattleManagerment",
-        "projectPath": "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
-        "packagesPath": "C:\\Users\\JayThien\\.nuget\\packages\\",
-        "outputPath": "E:\\PhuocThien\\GraphQL\\GraphQLPostgre\\CattleManagerment\\obj\\",
+        "projectPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\CattleManagerment.csproj",
+        "packagesPath": "C:\\Users\\hpthien\\.nuget\\packages\\",
+        "outputPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\CattleManagerment\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\JayThien\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Users\\hpthien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -56,6 +51,10 @@
             "HotChocolate.AspNetCore.Playground": {
               "target": "Package",
               "version": "[10.5.5, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -104,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

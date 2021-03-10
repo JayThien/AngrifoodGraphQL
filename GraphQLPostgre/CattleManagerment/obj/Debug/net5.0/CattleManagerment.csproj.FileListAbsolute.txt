@@ -122,3 +122,6 @@ E:\PhuocThien\GraphQL\GraphQLPostgre\CattleManagerment\obj\Debug\net5.0\CattleMa
 E:\PhuocThien\GraphQL\GraphQLPostgre\CattleManagerment\obj\Debug\net5.0\ref\CattleManagerment.dll
 E:\PhuocThien\GraphQL\GraphQLPostgre\CattleManagerment\obj\Debug\net5.0\CattleManagerment.pdb
 E:\PhuocThien\GraphQL\GraphQLPostgre\CattleManagerment\obj\Debug\net5.0\CattleManagerment.genruntimeconfig.cache
+D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\CattleManagerment\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\CattleManagerment\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\CattleManagerment\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
