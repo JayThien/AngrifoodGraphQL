@@ -1,6 +1,9 @@
 ﻿using CattleManagerment.Entities;
+using CattleManagerment.IReponsitory;
+using CattleManagerment.Iservice;
 using CattleManagerment.Models;
 using HotChocolate;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -14,6 +17,17 @@ namespace CattleManagerment
 {
     public class Mutation
     {
+		IUserService _userService;
+		//IUserReponsitory _userReponsitory;
+		public Mutation(IUserService userService)
+        {
+			_userService = userService;
+        }
+
+		public async Task<User> CreateUser(string email, string password)
+        {
+			return await _userService.CreateUserAsync(email, password);
+        }
 		private List<User> Users = new List<User>
 		{
 			new User{

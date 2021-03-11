@@ -1,5 +1,11 @@
-using CattleManagerment.GraphQLModels.ObjectTypes;
+//using CattleManagerment.GraphQLModels.ObjectTypes;
+using CattleManagerment.GraphQLCore;
+using CattleManagerment.IReponsitory;
+using CattleManagerment.Iservice;
 using CattleManagerment.Models;
+using CattleManagerment.Reponsitory;
+using CattleManagerment.Service;
+using HotChocolate;
 using HotChocolate.AspNetCore;
 using HotChocolate.AspNetCore.Playground;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -33,9 +39,11 @@ namespace CattleManagerment
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddGraphQLServer()
-            .AddQueryType<QueryObjectType>()
-            .AddMutationType<MutationObjectType>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<Query>();
+            services.AddScoped<Mutation>();
+            services.AddScoped<IUserReponsitory, UserReponsitory>();
+            services.AddGraphQL(p => SchemaBuilder.New().AddServices(p).AddQueryType<Query>().AddMutationType<Mutation>().Create());
             services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -50,7 +58,8 @@ namespace CattleManagerment
                         ValidateIssuerSigningKey = true
                     };
                 });
-            services.AddEntityFrameworkNpgsql().AddDbContext<DataDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("MyWebApiConection")));
+            //services.AddEntityFrameworkNpgsql().AddDbContext<DataDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("MyWebApiConection")));
+            services.AddDbContext<DataDbContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("DbConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

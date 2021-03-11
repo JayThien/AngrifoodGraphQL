@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using CattleManagerment.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CattleManagerment.Models
 {
-    public class DataDbContext : IdentityDbContext
+    public class DataDbContext : IdentityDbContext<User, Role,int>
     {
-        public DataDbContext(DbContextOptions options) : base(options){}
+        public DataDbContext(DbContextOptions<DataDbContext> options) : base(options){}
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
