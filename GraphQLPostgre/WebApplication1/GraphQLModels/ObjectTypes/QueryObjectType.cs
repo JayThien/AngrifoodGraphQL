@@ -3,11 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using WebApplication1.GraphQLCore;
 
 namespace WebApplication1.GraphQLModels.ObjectTypes
 {
     public class QueryObjectType : ObjectType<Query>
     {
+        protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
+        {
+            descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser");
+            descriptor.Field(a => a.GetUserByIdAsync(default, default)).Name("GetUserById");
+        }
+
     }
 }

@@ -1,9 +1,15 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using WebApplication1.Entities;
 using WebApplication1.IServices;
+using WebApplication1.Models;
 using WebApplication1.Models.ModelContext;
 
 namespace WebApplication1.Services
@@ -16,14 +22,68 @@ namespace WebApplication1.Services
         {
             _dataDbContext = dataDbContext;
         }
-        public  List<User> GetAllUser()
+
+        public async Task<User> CreateUserAsync(User user)
         {
-            return _dataDbContext.Users.ToList();
+            await _dataDbContext.Users.AddAsync(user);
+            await _dataDbContext.SaveChangesAsync();
+            return user;
         }
 
-        public User GetUserById(int id)
+        public async Task<bool> DeleteUserAsync(int id)
         {
-            return _dataDbContext.Users.Where(a => a.Id == id).FirstOrDefault();
+            var user = await _dataDbContext.Users.Where(a => a.Id == id).FirstOrDefaultAsync();
+            if(user == null)
+            {
+                return false;
+            }
+             _dataDbContext.Users.Remove(user);
+            return true;
+        }
+
+        public async Task<List<User>> GetAllUserAsync()
+        {
+            return await _dataDbContext.Users.ToListAsync();
+        }
+
+        public async Task<User> GetUserByIdAsync(int id)
+        {
+            return await _dataDbContext.Users.Where(a => a.Id == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<User> UpdateUserAsync(User user)
+        {
+            var userCurrent = await _dataDbContext.Users.Where(a => a.Id == user.Id).FirstOrDefaultAsync();
+            if(userCurrent == null)
+            {
+                throw new Exception();
+            }
+            _dataDbContext.Users.Update(userCurrent);
+            await _dataDbContext.SaveChangesAsync();
+            return userCurrent;
+        }
+
+        public string UserLogin(IOptions<TokenSettings> tokenSettings, LoginInput login)
+        {
+            var currentUser = _dataDbContext.Users.Where(_ => _.Email.ToLower() == login.Email.ToLower() &&
+            _.Password == login.Password).FirstOrDefault();
+
+            if (currentUser != null)
+            {
+                var securitykey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenSettings.Value.Key));
+                var credentials = new SigningCredentials(securitykey, SecurityAlgorithms.HmacSha256);
+
+                var jwtToken = new JwtSecurityToken(
+                    issuer: tokenSettings.Value.Issuer,
+                    audience: tokenSettings.Value.Audience,
+                    expires: DateTime.Now.AddMinutes(20),
+                    signingCredentials: credentials
+                );
+
+                return new JwtSecurityTokenHandler().WriteToken(jwtToken);
+
+            }
+            return "";
         }
     }
 }

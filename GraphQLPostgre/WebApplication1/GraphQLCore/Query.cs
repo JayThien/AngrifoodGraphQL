@@ -1,11 +1,23 @@
-﻿using System;
+﻿using HotChocolate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication1.Entities;
+using WebApplication1.IServices;
 
 namespace WebApplication1.GraphQLCore
 {
     public class Query
     {
+        public async Task<List<User>> GetAllUserAsync([Service] IUserService userService)
+        {
+            return await userService.GetAllUserAsync();
+        }
+
+        public async Task<User> GetUserByIdAsync([Service] IUserService userService, int id)
+        {
+            return await userService.GetUserByIdAsync(id);
+        }
     }
 }
