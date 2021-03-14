@@ -1,26 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj": {}
+    "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj": {
+    "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\hpthien\\.nuget\\packages\\",
-        "outputPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\obj\\",
+        "projectPath": "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj",
+        "packagesPath": "C:\\Users\\JayThien\\.nuget\\packages\\",
+        "outputPath": "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\hpthien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JayThien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -111,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -18,7 +18,7 @@ namespace WebApplication1.GraphQLModels.ObjectTypes
             .Argument("login", a => a.Type<LoginInputObjectType>());
             descriptor.Field(a => a.CreateUserAsync(default, default)).Name("CreateUser");
             descriptor.Field(a => a.DeleteUserAsync(default, default)).Name("DeleteUser");
-            descriptor.Field(a => a.UpdateUserAsync(default, default)).Name("UpdateUser");
+            descriptor.Field(a => a.UpdateUserAsync(default, default,default)).Name("UpdateUser");
         }
     }
 }

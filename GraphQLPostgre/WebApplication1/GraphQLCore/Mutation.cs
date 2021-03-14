@@ -37,11 +37,17 @@ namespace WebApplication1.GraphQLCore
             }
         }
 
-        public async Task<User> UpdateUserAsync([Service] IUserService userService, User user)
+        public async Task<User> UpdateUserAsync([Service] IUserService userService, User user, int id)
         {
             try
             {
-                return await userService.UpdateUserAsync(user);
+                var userId = await userService.GetUserByIdAsync(id);
+                if(userId == null)
+                {
+                    throw new Exception();
+                }
+                userId.Email = user.Email;
+                return await userService.UpdateUserAsync(userId);
             } catch(Exception e)
             {
                 throw e;
