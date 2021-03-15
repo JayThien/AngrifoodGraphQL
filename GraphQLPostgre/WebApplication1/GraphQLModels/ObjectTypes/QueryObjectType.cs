@@ -11,8 +11,9 @@ namespace WebApplication1.GraphQLModels.ObjectTypes
     {
         protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
         {
-            descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser");
+            descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser").Authorize();
             descriptor.Field(a => a.GetUserByIdAsync(default, default)).Name("GetUserById");
+            descriptor.Field(a => a.GetAllRoleAsync(default)).Name("GetAllRole");
         }
 
     }

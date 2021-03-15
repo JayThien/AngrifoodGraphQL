@@ -1,5 +1,6 @@
 using HotChocolate.AspNetCore;
 using HotChocolate.AspNetCore.Playground;
+using HotChocolate.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,21 +38,6 @@ namespace WebApplication1
             // Add Db Postgre
             services.AddEntityFrameworkNpgsql().AddDbContext<DataDbContext>(opt => opt.UseNpgsql(Configuration.GetConnectionString("MyWebApiConection")));
 
-            // Add Scoped Service
-            services.AddScoped<IUserService, UserService>();
-
-            // Add scoped ObjectType
-            services.AddScoped<QueryObjectType>();
-            services.AddScoped<MutationObjectType>();
-
-            // Add GraphQL
-            services.AddGraphQLServer()
-            .AddQueryType<QueryObjectType>()
-            .AddMutationType<MutationObjectType>();
-
-            // Config Token
-            services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));
-
             // Add authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -66,6 +52,25 @@ namespace WebApplication1
                         ValidateIssuerSigningKey = true
                     };
                 });
+
+            // Add Scoped Service
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IRoleService, RoleService>();
+
+            // Add scoped ObjectType
+            services.AddScoped<QueryObjectType>();
+            services.AddScoped<MutationObjectType>();
+
+            // Add GraphQL
+            services.AddGraphQLServer()
+            .AddQueryType<QueryObjectType>()
+            .AddMutationType<MutationObjectType>()
+            .AddAuthorization();
+
+            // Config Token
+            services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -86,6 +91,7 @@ namespace WebApplication1
             app.UseRouting();
             app.UseGraphQL("/api");
             app.UseAuthentication();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

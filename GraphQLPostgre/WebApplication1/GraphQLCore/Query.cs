@@ -1,4 +1,5 @@
 ﻿using HotChocolate;
+using HotChocolate.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace WebApplication1.GraphQLCore
         public async Task<User> GetUserByIdAsync([Service] IUserService userService, int id)
         {
             return await userService.GetUserByIdAsync(id);
+        }
+        public async Task<List<Role>> GetAllRoleAsync([Service] IRoleService roleService)
+        {
+            return await roleService.GetAllRoleAsync();
         }
     }
 }

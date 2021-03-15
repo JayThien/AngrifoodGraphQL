@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using WebApplication1.Entities;
@@ -38,6 +39,7 @@ namespace WebApplication1.Services
                 return false;
             }
              _dataDbContext.Users.Remove(user);
+            await _dataDbContext.SaveChangesAsync();
             return true;
         }
 

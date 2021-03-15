@@ -58,5 +58,17 @@ namespace WebApplication1.GraphQLCore
         {
             return userService.UserLogin(tokenSettings, login);
         }
+
+        public async Task<Role> CreateRoleAsync([Service] IRoleService roleService, Role role)
+        {
+            try
+            {
+                return await roleService.CreateRoleAsync(role);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
