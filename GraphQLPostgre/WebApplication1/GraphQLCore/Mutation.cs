@@ -1,4 +1,5 @@
 ﻿using HotChocolate;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -15,15 +16,33 @@ namespace WebApplication1.GraphQLCore
 {
     public class Mutation
     {
-        public async Task<User> CreateUserAsync([Service] IUserService userService, User user)
+        public async Task<User> CreateUserAsync([Service] IUserService userService, UserInputK userInput)
         {
             try
             {
-                return await userService.CreateUserAsync(user);
+                var user = new User();
+                user.Email = userInput.Email;
+                user.Password = userInput.Password;
+                user.UserName = userInput.UserName;
+                await userService.CreateUserAsync(user);
+                return user;
             } catch(Exception e)
             {
                 throw e;
             }
+        }
+
+        public async Task<bool> AddRoleToUserAsync(int userId, string nameRole, [Service] IUserService userService)
+        {
+            try
+            {
+                return await userService.AddRoleToUserAsync(userId, nameRole);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
         }
 
         public async Task<bool> DeleteUserAsync([Service] IUserService userService, int id)

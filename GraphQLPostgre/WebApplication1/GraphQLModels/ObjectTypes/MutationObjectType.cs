@@ -20,6 +20,7 @@ namespace WebApplication1.GraphQLModels.ObjectTypes
             descriptor.Field(a => a.DeleteUserAsync(default, default)).Name("DeleteUser");
             descriptor.Field(a => a.UpdateUserAsync(default, default,default)).Name("UpdateUser");
             descriptor.Field(a => a.CreateRoleAsync(default, default)).Name("CreateRole");
+            descriptor.Field(a => a.AddRoleToUserAsync(default, default, default)).Name("AddRoleToUser");
         }
     }
 }

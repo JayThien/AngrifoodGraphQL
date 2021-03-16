@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -22,6 +23,25 @@ namespace WebApplication1.Services
         public UserService(DataDbContext dataDbContext)
         {
             _dataDbContext = dataDbContext;
+        }
+
+        public async Task<bool> AddRoleToUserAsync(int userId, string roleName)
+        {
+            var user = await _dataDbContext.Users.Where(a => a.Id == userId).FirstOrDefaultAsync();
+            if (user == null)
+            {
+                return false;
+            }
+            var roleId = await _dataDbContext.Roles.Where(a => a.Name.ToUpper() == roleName.ToUpper()).FirstOrDefaultAsync();
+            if(roleId == null)
+            {
+                return false;
+            }
+            var userRole = new IdentityUserRole<int>();
+            userRole.UserId = user.Id;
+            userRole.RoleId = roleId.Id;
+            await _dataDbContext.UserRoles.AddAsync(userRole);
+            return true;
         }
 
         public async Task<User> CreateUserAsync(User user)
@@ -60,6 +80,7 @@ namespace WebApplication1.Services
             {
                 throw new Exception();
             }
+            userCurrent.Email = user.Email;
             _dataDbContext.Users.Update(userCurrent);
             await _dataDbContext.SaveChangesAsync();
             return userCurrent;

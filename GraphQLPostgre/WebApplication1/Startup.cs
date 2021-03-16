@@ -53,6 +53,14 @@ namespace WebApplication1
                     };
                 });
 
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("user-policy", policy =>
+            //    {
+            //        policy.RequireRole(_context.Roles.Select(x => x.Name));
+            //    });
+            //});
+
             // Add Scoped Service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
@@ -64,8 +72,7 @@ namespace WebApplication1
             // Add GraphQL
             services.AddGraphQLServer()
             .AddQueryType<QueryObjectType>()
-            .AddMutationType<MutationObjectType>()
-            .AddAuthorization();
+            .AddMutationType<MutationObjectType>().AddAuthorization();
 
             // Config Token
             services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));

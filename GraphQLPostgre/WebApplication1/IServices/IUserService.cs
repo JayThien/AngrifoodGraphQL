@@ -16,6 +16,7 @@ namespace WebApplication1.IServices
         Task<bool> DeleteUserAsync(int id);
         string UserLogin(IOptions<TokenSettings> tokenSettings, LoginInput login);
         Task<User> UpdateUserAsync(User user);
+        Task<bool> AddRoleToUserAsync(int userId, string roleName);
 
     }
 }
