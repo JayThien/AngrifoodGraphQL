@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,5 @@ namespace WebApplication1.IServices
         string UserLogin(IOptions<TokenSettings> tokenSettings, LoginInput login);
         Task<User> UpdateUserAsync(User user);
         Task<bool> AddRoleToUserAsync(int userId, string roleName);
-
     }
 }

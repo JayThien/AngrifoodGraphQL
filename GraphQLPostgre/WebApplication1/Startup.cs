@@ -21,6 +21,7 @@ using WebApplication1.IServices;
 using WebApplication1.Models;
 using WebApplication1.Models.ModelContext;
 using WebApplication1.Services;
+using WebApplication1.Entities;
 
 namespace WebApplication1
 {

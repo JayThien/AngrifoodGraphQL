@@ -11,6 +11,5 @@ namespace WebApplication1.IServices
         Task<List<Role>> GetAllRoleAsync();
         Task<Role> CreateRoleAsync(Role role);
         Task<bool> DeleteRoleAsync(int id);
-
     }
 }

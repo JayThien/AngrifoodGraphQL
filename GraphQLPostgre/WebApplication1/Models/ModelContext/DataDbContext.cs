@@ -12,6 +12,11 @@ namespace WebApplication1.Models.ModelContext
     {
         public DataDbContext(DbContextOptions<DataDbContext> options) : base(options) { }
 
+        DbSet<Farmer> Farmers { get; set; }
+        DbSet<Cattle> Cattles { get; set; }
+        DbSet<Byre> Byres { get; set; }
+        DbSet<TypeOfCattle> TypeOfCattles { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
