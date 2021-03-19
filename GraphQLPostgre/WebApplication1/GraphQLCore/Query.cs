@@ -26,5 +26,13 @@ namespace WebApplication1.GraphQLCore
         {
             return await roleService.GetAllRoleAsync();
         }
+        public async Task<List<Farmer>> GetAllFarmerAsync([Service] IFarmerService farmerService)
+        {
+            return await farmerService.GetAllFarmerAsync();
+        }
+        public async Task<Farmer> GetFarmerByIdAsync([Service] IFarmerService farmerService, int id)
+        {
+            return await farmerService.GetFarmerByIdAsync(id);
+        }
     }
 }

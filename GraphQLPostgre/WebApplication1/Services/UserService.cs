@@ -75,15 +75,10 @@ namespace WebApplication1.Services
 
         public async Task<User> UpdateUserAsync(User user)
         {
-            var userCurrent = await _dataDbContext.Users.Where(a => a.Id == user.Id).FirstOrDefaultAsync();
-            if(userCurrent == null)
-            {
-                throw new Exception();
-            }
-            userCurrent.Email = user.Email;
-            _dataDbContext.Users.Update(userCurrent);
+            _dataDbContext.Users.Attach(user);
+            _dataDbContext.Entry(user).State = EntityState.Modified;
             await _dataDbContext.SaveChangesAsync();
-            return userCurrent;
+            return user;
         }
 
         public string UserLogin(IOptions<TokenSettings> tokenSettings, LoginInput login)

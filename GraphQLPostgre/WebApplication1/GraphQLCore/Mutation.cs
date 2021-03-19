@@ -56,17 +56,11 @@ namespace WebApplication1.GraphQLCore
             }
         }
 
-        public async Task<User> UpdateUserAsync([Service] IUserService userService, User user, int id)
+        public async Task<User> UpdateUserAsync([Service] IUserService userService, User user)
         {
             try
             {
-                var userId = await userService.GetUserByIdAsync(id);
-                if(userId == null)
-                {
-                    throw new Exception();
-                }
-                userId.Email = user.Email;
-                return await userService.UpdateUserAsync(userId);
+                return await userService.UpdateUserAsync(user);
             } catch(Exception e)
             {
                 throw e;
@@ -83,6 +77,37 @@ namespace WebApplication1.GraphQLCore
             try
             {
                 return await roleService.CreateRoleAsync(role);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public async Task<bool> DeleteFarmerAsync([Service] IFarmerService farmerService, int id)
+        {
+            try
+            {
+                return await farmerService.DeleteFarmerAsync(id);
+            }
+            catch (Exception e) {
+                throw e;
+            }
+        }
+        public async Task<Farmer> CreateFarmerAsync([Service] IFarmerService farmerService, Farmer farmer)
+        {
+            try
+            {
+                return await farmerService.CreateFarmerAsync(farmer);
+            } catch(Exception e)
+            {
+                throw e;
+            }
+        }
+        public async Task<Farmer> UpdateFarmerAsync([Service] IFarmerService farmerService, Farmer farmer)
+        {
+            try
+            {
+                return await farmerService.UpdateFarmerAsync(farmer);
             }
             catch (Exception e)
             {

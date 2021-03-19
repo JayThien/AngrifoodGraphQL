@@ -19,6 +19,7 @@ namespace WebApplication1.Entities
         [Phone]
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+        [DataType(DataType.Date)]
         public DateTime Birthday { get; set; }
         public string Gender { get; set; }
         [EmailAddress]
@@ -27,6 +28,7 @@ namespace WebApplication1.Entities
         public string Status { get; set; }
         [StringLength(20)]
         public string IdentificationNo { get; set; }
+        [DataType(DataType.Date)]
         public DateTime IssuedOn { get; set; }
         public string IssuedBy { get; set; }
         [StringLength(20)]

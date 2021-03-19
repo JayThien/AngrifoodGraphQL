@@ -14,6 +14,8 @@ namespace WebApplication1.GraphQLModels.ObjectTypes
             descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser");
             descriptor.Field(a => a.GetUserByIdAsync(default, default)).Name("GetUserById");
             descriptor.Field(a => a.GetAllRoleAsync(default)).Name("GetAllRole");
+            descriptor.Field(a => a.GetAllFarmerAsync(default)).Name("GetAllFarmer");
+            descriptor.Field(a => a.GetFarmerByIdAsync(default, default)).Name("GetFarmerById");
         }
 
     }
