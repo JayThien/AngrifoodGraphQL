@@ -34,5 +34,9 @@ namespace WebApplication1.GraphQLCore
         {
             return await farmerService.GetFarmerByIdAsync(id);
         }
+        public async Task<List<Byre>> GetAllByreAsync([Service] IByreService byreService)
+        {
+            return await byreService.GetAllByreAsync();
+        }
     }
 }
