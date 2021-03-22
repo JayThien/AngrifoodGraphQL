@@ -66,6 +66,9 @@ namespace WebApplication1
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IFarmerService, FarmerService>();
+            services.AddScoped<ICattleService, CattleService>();
+            services.AddScoped<IByreService, ByreService>();
+            services.AddScoped<ITypeOfCattleService, TypeOfCattleService>();
 
             // Add scoped ObjectType
             services.AddScoped<QueryObjectType>();

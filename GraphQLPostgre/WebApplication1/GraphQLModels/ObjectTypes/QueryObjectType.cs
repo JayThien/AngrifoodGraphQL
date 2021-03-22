@@ -13,10 +13,20 @@ namespace WebApplication1.GraphQLModels.ObjectTypes
         {
             descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser");
             descriptor.Field(a => a.GetUserByIdAsync(default, default)).Name("GetUserById");
+
             descriptor.Field(a => a.GetAllRoleAsync(default)).Name("GetAllRole");
+
             descriptor.Field(a => a.GetAllFarmerAsync(default)).Name("GetAllFarmer");
             descriptor.Field(a => a.GetFarmerByIdAsync(default, default)).Name("GetFarmerById");
+
             descriptor.Field(a => a.GetAllByreAsync(default)).Name("GetAllByre");
+            descriptor.Field(a => a.GetByreById(default, default)).Name("GetByreById");
+
+            descriptor.Field(a => a.GetAllCattleAsync(default)).Name("GetAllCattle");
+            descriptor.Field(a => a.GetCattleById(default, default)).Name("GetCattleById");
+
+            descriptor.Field(a => a.GetAllTypeOfCattleAsync(default)).Name("GetAllTypeOfCattle");
+            descriptor.Field(a => a.GetTypeOfCattleById(default, default)).Name("GetTypeOfCattleById");
         }
 
     }

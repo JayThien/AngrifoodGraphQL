@@ -38,5 +38,27 @@ namespace WebApplication1.GraphQLCore
         {
             return await byreService.GetAllByreAsync();
         }
+        public async Task<Byre> GetByreById([Service] IByreService byreService, int id)
+        {
+            return await byreService.GetByreById(id);
+        }
+
+        public async Task<List<Cattle>> GetAllCattleAsync([Service] ICattleService cattleService)
+        {
+            return await cattleService.GetAllCattleAsync();
+        }
+        public async Task<Cattle> GetCattleById([Service] ICattleService cattleService, int id)
+        {
+            return await cattleService.GetCattleById(id);
+        }
+
+        public async Task<List<TypeOfCattle>> GetAllTypeOfCattleAsync([Service] ITypeOfCattleService typeOfCattleService)
+        {
+            return await typeOfCattleService.GetAllTypeOfCattleAsync();
+        }
+        public async Task<TypeOfCattle> GetTypeOfCattleById([Service] ITypeOfCattleService typeOfCattleService, int id)
+        {
+            return await typeOfCattleService.GetTypeOfCattleById(id);
+        }
     }
 }

@@ -16,16 +16,12 @@ namespace WebApplication1.GraphQLCore
 {
     public class Mutation
     {
-        public async Task<User> CreateUserAsync([Service] IUserService userService, UserInputK userInput)
+        public async Task<User> CreateUserAsync([Service] IUserService userService, User userInput)
         {
             try
             {
-                var user = new User();
-                user.Email = userInput.Email;
-                user.Password = userInput.Password;
-                user.UserName = userInput.UserName;
-                await userService.CreateUserAsync(user);
-                return user;
+                await userService.CreateUserAsync(userInput);
+                return userInput;
             } catch(Exception e)
             {
                 throw e;
@@ -111,6 +107,116 @@ namespace WebApplication1.GraphQLCore
             }
             catch (Exception e)
             {
+                throw e;
+            }
+        }
+        public async Task<Byre> CreateByreAsync([Service] IByreService byreService, Byre byre)
+        {
+            try
+            {
+                return await byreService.CreateByreAsync(byre);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        public async Task<bool> DeleteByreAsync([Service] IByreService byreService, int id)
+        {
+            try
+            {
+                return await byreService.DeleteByreAsync(id);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        public async Task<Byre> UpdateByreAsync([Service] IByreService byreService, Byre byre)
+        {
+            try
+            {
+                return await byreService.UpdateByreAsync(byre);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public async Task<Cattle> CreateCattleAsync([Service] ICattleService cattleService, Cattle cattle)
+        {
+            try
+            {
+                return await cattleService.CreateCattleAsync(cattle);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        public async Task<bool> DeleteCattleAsync([Service] ICattleService cattleService, int id)
+        {
+            try
+            {
+                return await cattleService.DeleteCattleAsync(id);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        public async Task<Cattle> UpdateCattleAsync([Service] ICattleService cattleService, Cattle cattle)
+        {
+            try
+            {
+                return await cattleService.UpdateCattleAsync(cattle);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public async Task<TypeOfCattle> CreateTypeOfCattleAsync([Service] ITypeOfCattleService typeOfCattleService, TypeOfCattle typeOfCattle)
+        {
+            try
+            {
+                return await typeOfCattleService.CreateTypeOfCattleAsync(typeOfCattle);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        public async Task<bool> DeleteTypeOfCattleAsync([Service] ITypeOfCattleService typeOfCattleService, int id)
+        {
+            try
+            {
+                return await typeOfCattleService.DeleteTypeOfCattleAsync(id);
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+        public async Task<TypeOfCattle> UpdateTypeOfCattleAsync([Service] ITypeOfCattleService typeOfCattleService, TypeOfCattle typeOfCattle)
+        {
+            try
+            {
+                return await typeOfCattleService.UpdateTypeOfCattleAsync(typeOfCattle);
+            }
+            catch (Exception e)
+            {
+
                 throw e;
             }
         }
