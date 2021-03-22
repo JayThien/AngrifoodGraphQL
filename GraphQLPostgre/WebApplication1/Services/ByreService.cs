@@ -37,12 +37,12 @@ namespace WebApplication1.Services
 
         public async Task<List<Byre>> GetAllByreAsync()
         {
-            return await _dataDbContext.Byres.ToListAsync();
+            return await _dataDbContext.Byres.Include(a => a.Farmer).ToListAsync();
         }
 
         public async Task<Byre> GetByreById(int id)
         {
-            return await _dataDbContext.Byres.Where(a => a.Id == id).FirstOrDefaultAsync();
+            return await _dataDbContext.Byres.Include(a => a.Farmer).Where(a => a.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<Byre> UpdateByreAsync(Byre byre)

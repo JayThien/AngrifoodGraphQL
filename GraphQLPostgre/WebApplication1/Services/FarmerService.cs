@@ -37,12 +37,12 @@ namespace WebApplication1.Services
 
         public async Task<List<Farmer>> GetAllFarmerAsync()
         {
-            return await _dataDbContext.Farmers.ToListAsync();
+            return await _dataDbContext.Farmers.Include(a => a.User).ToListAsync();
         }
 
         public async Task<Farmer> GetFarmerByIdAsync(int id)
         {
-            return await _dataDbContext.Farmers.Where(a => a.Id == id).FirstOrDefaultAsync();
+            return await _dataDbContext.Farmers.Include(a => a.User).Where(a => a.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<Farmer> UpdateFarmerAsync(Farmer farmer)

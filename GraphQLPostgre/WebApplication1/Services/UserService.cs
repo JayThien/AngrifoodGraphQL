@@ -41,6 +41,7 @@ namespace WebApplication1.Services
             userRole.UserId = user.Id;
             userRole.RoleId = roleId.Id;
             await _dataDbContext.UserRoles.AddAsync(userRole);
+            await _dataDbContext.SaveChangesAsync();
             return true;
         }
 
