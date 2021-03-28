@@ -13,6 +13,11 @@ namespace WebApplication1.GraphQLCore
 {
     public class Query
     {
+        public async Task<List<User>> GetAllUserAsync1([Service] IUserService userService)
+        {
+            return await userService.GetAllUserAsync();
+        }
+
         public async Task<List<User>> GetAllUserAsync([Service] IUserService userService)
         {
             return await userService.GetAllUserAsync();

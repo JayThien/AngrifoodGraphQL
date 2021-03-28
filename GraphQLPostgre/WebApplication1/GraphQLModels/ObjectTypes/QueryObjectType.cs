@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.GraphQLCore;
+using WebApplication1.GraphQLModels.InputObjectTypes;
 
 namespace WebApplication1.GraphQLModels.ObjectTypes
 {
@@ -11,7 +12,8 @@ namespace WebApplication1.GraphQLModels.ObjectTypes
     {
         protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
         {
-            descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser");
+            descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser").UsePaging();
+            descriptor.Field(a => a.GetAllUserAsync1(default)).Name("GetAllUser1");
             descriptor.Field(a => a.GetUserByIdAsync(default, default)).Name("GetUserById");
 
             descriptor.Field(a => a.GetAllRoleAsync(default)).Name("GetAllRole");

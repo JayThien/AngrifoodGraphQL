@@ -144,3 +144,9 @@ D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\Sy
 D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.Linq.dll
 D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.dll
 D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.xml
+E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\GraphQL.dll
+E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\GraphQL-Parser.dll
+E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.Core.dll
+E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.Linq.dll
+E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.dll
+E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.xml
