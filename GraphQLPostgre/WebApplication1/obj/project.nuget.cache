@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LX0b34iP1JlhUl8JcqYoixxssdm7dpeLN0lQhe/thM16sVmFXa2LYu8CFptdL6hGWNhLFjw6QacviT26Nq0LIA==",
+  "dgSpecHash": "cMJDj1vlAlLoMADjCPuTmBD90jKfUZjrGR2KcovfUhpo9yrznp0W4LTXHD91NG59GvBwcGCuJn6hPr4LKxXMJQ==",
   "success": true,
   "projectFilePath": "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
@@ -24,7 +24,9 @@
     "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.subscriptions.inmemory\\11.0.9\\hotchocolate.subscriptions.inmemory.11.0.9.nupkg.sha512",
     "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.types\\11.0.9\\hotchocolate.types.11.0.9.nupkg.sha512",
     "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.types.cursorpagination\\11.0.9\\hotchocolate.types.cursorpagination.11.0.9.nupkg.sha512",
+    "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.types.filters\\11.0.9\\hotchocolate.types.filters.11.0.9.nupkg.sha512",
     "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.types.offsetpagination\\11.0.9\\hotchocolate.types.offsetpagination.11.0.9.nupkg.sha512",
+    "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.types.sorting\\11.0.9\\hotchocolate.types.sorting.11.0.9.nupkg.sha512",
     "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.utilities\\11.0.9\\hotchocolate.utilities.11.0.9.nupkg.sha512",
     "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.utilities.introspection\\11.0.9\\hotchocolate.utilities.introspection.11.0.9.nupkg.sha512",
     "C:\\Users\\JayThien\\.nuget\\packages\\hotchocolate.validation\\11.0.9\\hotchocolate.validation.11.0.9.nupkg.sha512",

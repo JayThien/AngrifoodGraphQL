@@ -12,8 +12,9 @@ namespace WebApplication1.GraphQLModels.ObjectTypes
     {
         protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
         {
-            descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser").UsePaging();
-            descriptor.Field(a => a.GetAllUserAsync1(default)).Name("GetAllUser1");
+            descriptor.Field(a => a.GetAllUserAsync(default)).Name("GetAllUser").UsePaging().UseFiltering().UseSorting();
+            //descriptor.Field(a => a.GetAllUserAsync1(default)).Name("GetAllUser1").UseFiltering().UseSorting();
+            //descriptor.Field(a => a.GetAllUserAsync2(default)).Name("GetAllUser2").UseSorting();
             descriptor.Field(a => a.GetUserByIdAsync(default, default)).Name("GetUserById");
 
             descriptor.Field(a => a.GetAllRoleAsync(default)).Name("GetAllRole");

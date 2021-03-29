@@ -29,6 +29,8 @@
           "HotChocolate.AspNetCore": "11.0.9",
           "HotChocolate.AspNetCore.Authorization": "11.0.9",
           "HotChocolate.AspNetCore.Playground": "10.5.5",
+          "HotChocolate.Types.Filters": "11.0.9",
+          "HotChocolate.Types.Sorting": "11.0.9",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.4",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.4",
           "Microsoft.EntityFrameworkCore": "5.0.4",
@@ -650,6 +652,21 @@
           "lib/net5.0/HotChocolate.Types.CursorPagination.dll": {}
         }
       },
+      "HotChocolate.Types.Filters/11.0.9": {
+        "dependencies": {
+          "HotChocolate.Language.Visitors": "11.0.9",
+          "HotChocolate.Types": "11.0.9"
+        },
+        "runtime": {
+          "lib/net5.0/HotChocolate.Types.Filters.dll": {
+            "assemblyVersion": "11.0.9.0",
+            "fileVersion": "11.0.9.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/HotChocolate.Types.Filters.dll": {}
+        }
+      },
       "HotChocolate.Types.OffsetPagination/11.0.9": {
         "dependencies": {
           "HotChocolate.Types": "11.0.9"
@@ -662,6 +679,20 @@
         },
         "compile": {
           "lib/net5.0/HotChocolate.Types.OffsetPagination.dll": {}
+        }
+      },
+      "HotChocolate.Types.Sorting/11.0.9": {
+        "dependencies": {
+          "HotChocolate.Types": "11.0.9"
+        },
+        "runtime": {
+          "lib/net5.0/HotChocolate.Types.Sorting.dll": {
+            "assemblyVersion": "11.0.9.0",
+            "fileVersion": "11.0.9.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/HotChocolate.Types.Sorting.dll": {}
         }
       },
       "HotChocolate.Utilities/11.0.9": {
@@ -3055,12 +3086,26 @@
       "path": "hotchocolate.types.cursorpagination/11.0.9",
       "hashPath": "hotchocolate.types.cursorpagination.11.0.9.nupkg.sha512"
     },
+    "HotChocolate.Types.Filters/11.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rvkgc19oIdc3PGJN7D85mlL5fVLWq8xj0cq7Wt9DiKJebfD42+HzJQyDWeZyejE+AZOTcp4zJ+9tE9HAMGMM6A==",
+      "path": "hotchocolate.types.filters/11.0.9",
+      "hashPath": "hotchocolate.types.filters.11.0.9.nupkg.sha512"
+    },
     "HotChocolate.Types.OffsetPagination/11.0.9": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-3NS6iN3znENeCsjtW21a70K+OkAqURKC9mRquY1Xjyheq5e+jufELw4aY6j9VdV3OMP8eXGOSYEc4PKYAo2flQ==",
       "path": "hotchocolate.types.offsetpagination/11.0.9",
       "hashPath": "hotchocolate.types.offsetpagination.11.0.9.nupkg.sha512"
+    },
+    "HotChocolate.Types.Sorting/11.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GCHiNMRUtkbAh8FvwvN/P2vtXaG4EOJxYt9hvNVmADUuaB8t53njrYAeaS/wx+5GfedJL+Dvsho2prJKxWZFww==",
+      "path": "hotchocolate.types.sorting/11.0.9",
+      "hashPath": "hotchocolate.types.sorting.11.0.9.nupkg.sha512"
     },
     "HotChocolate.Utilities/11.0.9": {
       "type": "package",

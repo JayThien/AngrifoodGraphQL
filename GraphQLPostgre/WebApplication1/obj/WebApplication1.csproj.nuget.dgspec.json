@@ -61,6 +61,14 @@
               "target": "Package",
               "version": "[10.5.5, )"
             },
+            "HotChocolate.Types.Filters": {
+              "target": "Package",
+              "version": "[11.0.9, )"
+            },
+            "HotChocolate.Types.Sorting": {
+              "target": "Package",
+              "version": "[11.0.9, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[5.0.4, )"
