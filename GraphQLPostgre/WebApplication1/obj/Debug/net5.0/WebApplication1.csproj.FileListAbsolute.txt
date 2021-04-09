@@ -152,3 +152,5 @@ E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\S
 E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\System.Reactive.xml
 E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\HotChocolate.Types.Filters.dll
 E:\PhuocThien\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\HotChocolate.Types.Sorting.dll
+D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\HotChocolate.Types.Filters.dll
+D:\Angrifood\AngrifoodGraphQL\GraphQLPostgre\WebApplication1\bin\Debug\net5.0\HotChocolate.Types.Sorting.dll

@@ -82,7 +82,6 @@ namespace WebApplication1
             // Config Token
             services.Configure<TokenSettings>(Configuration.GetSection("TokenSettings"));
 
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
