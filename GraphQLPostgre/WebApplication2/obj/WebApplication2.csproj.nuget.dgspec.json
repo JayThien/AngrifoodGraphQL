@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj": {}
+    "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj": {}
   },
   "projects": {
-    "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj": {
+    "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj",
+        "projectUniqueName": "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj",
         "projectName": "WebApplication2",
-        "projectPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj",
-        "packagesPath": "C:\\Users\\hpthien\\.nuget\\packages\\",
-        "outputPath": "D:\\Angrifood\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\obj\\",
+        "projectPath": "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\WebApplication2.csproj",
+        "packagesPath": "C:\\Users\\JayThien\\.nuget\\packages\\",
+        "outputPath": "E:\\PhuocThien\\AngrifoodGraphQL\\GraphQLPostgre\\WebApplication2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\hpthien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\JayThien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -1,6 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS master_data;
 
-CREATE TABLE "master_data.AspNetRoles" (
+CREATE TABLE IF NOT EXISTS master_data.AspNetRoles (
   "Id" SERIAL PRIMARY KEY NOT NULL,
   "Name" character varying(256) NULL,
   "CreatedDate" bigint NULL,
@@ -11,12 +11,12 @@ CREATE TABLE "master_data.AspNetRoles" (
   "UpdatedByUserName" character varying(250) NULL
 );
 
-CREATE TABLE "master_data.AspNetUserRoles" (
+CREATE TABLE IF NOT EXISTS master_data.AspNetUserRoles (
   "UserId" int NOT NULL,
   "RolesId" int NOT NULL
 );
 
-CREATE TABLE "master_data.AspNetUsers" (
+CREATE TABLE IF NOT EXISTS master_data.AspNetUsers (
   "Id" SERIAL PRIMARY KEY NOT NULL,
   "UserName" character varying(256) NULL,
   "NormalizedUserName" character varying(256) NULL,
@@ -44,7 +44,7 @@ CREATE TABLE "master_data.AspNetUsers" (
   "ResetCode" character varying(250) NULL
 );
 
-CREATE TABLE "master_data.Farmer" (
+CREATE TABLE IF NOT EXISTS master_data.Farmer (
   "Id" SERIAL PRIMARY KEY NOT NULL,
   "Code" character varying(20) NULL,
   "Name" character varying(50) NULL,
@@ -64,13 +64,13 @@ CREATE TABLE "master_data.Farmer" (
   "UserId" int NULL
 );
 
-CREATE TABLE "master_data.TypeOfCattle" (
+CREATE TABLE IF NOT EXISTS master_data.TypeOfCattle (
   "Id" SERIAL PRIMARY KEY NOT NULL,
   "Code" character varying(10) NULL,
   "Name" character varying(100) NULL
 );
 
-CREATE TABLE IF NOT EXISTS "master_data.Cattle" (
+CREATE TABLE IF NOT EXISTS master_data.Cattle (
   "Id" SERIAL PRIMARY KEY NOT NULL,
   "ByreId" int NOT NULL,
   "MotherId" int NULL,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS "master_data.Cattle" (
   "TypeOfCattleId" int NULL
 );
 
-CREATE TABLE IF NOT EXISTS "master_data.Byre" (
+CREATE TABLE IF NOT EXISTS master_data.Byre (
   "Id" SERIAL PRIMARY KEY NOT NULL,
   "Code" character varying(10) NULL,
   "Name" character varying(100) NULL,
@@ -92,14 +92,14 @@ CREATE TABLE IF NOT EXISTS "master_data.Byre" (
   "FarmerId" int NULL
 );
 
-ALTER TABLE "master_data.AspNetUserRoles" ADD FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id");
+ALTER TABLE master_data.AspNetUserRoles ADD FOREIGN KEY ("UserId") REFERENCES master_data.AspNetUsers ("Id");
 
-ALTER TABLE "master_data.AspNetUserRoles" ADD FOREIGN KEY ("RolesId") REFERENCES "AspNetRoles" ("Id");
+ALTER TABLE master_data.AspNetUserRoles ADD FOREIGN KEY ("RolesId") REFERENCES master_data.AspNetRoles ("Id");
 
-ALTER TABLE "master_data.Farmer" ADD FOREIGN KEY ("UserId") REFERENCES "AspNetUsers" ("Id");
+ALTER TABLE master_data.Farmer ADD FOREIGN KEY ("UserId") REFERENCES master_data.AspNetUsers ("Id");
 
-ALTER TABLE "master_data.Byre" ADD FOREIGN KEY ("FarmerId") REFERENCES "Farmer" ("Id");
+ALTER TABLE master_data.Byre ADD FOREIGN KEY ("FarmerId") REFERENCES master_data.Farmer ("Id");
 
-alter table "master_data.Cattle" add foreign key ("ByreId") references "Byre" ("Id");
+alter table master_data.Cattle add foreign key ("ByreId") references master_data.Byre ("Id");
 
-ALTER TABLE "master_data.Cattle" ADD FOREIGN KEY ("TypeOfCattleId") REFERENCES "TypeOfCattle" ("Id");
+ALTER TABLE master_data.Cattle ADD FOREIGN KEY ("TypeOfCattleId") REFERENCES master_data.TypeOfCattle ("Id");

@@ -25,26 +25,31 @@ namespace Migration
         private static void Run()
         {
             var connString = _configuration.GetConnectionString("MyWebApiConection");
+            //var createNewDb = _configuration.GetValue("CreateNewDb", false);
 
             var scriptFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory.Remove(AppDomain.CurrentDomain.BaseDirectory.Length - 17), $"Scripts");
-            Console.WriteLine(scriptFolderPath);
-            EnsureDatabase.For.PostgresqlDatabase(connString);
+            //Console.WriteLine(scriptFolderPath);
+            //Log.Logger?.Information($"MigrationDb: createNewDb={createNewDb}");
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Production" /*&& createNewDb*/)
+            {
+                Log.Logger?.Information($"MigrationDb: ensure database created by using postgresdb metadata");
+                EnsureDatabase.For.PostgresqlDatabase(connString);
+            }
 
-            var upgradeBuilder = DeployChanges.To.PostgresqlDatabase(connString);
-            upgradeBuilder
+            var upgrader = DeployChanges
+                .To
+                .PostgresqlDatabase(connString)
                 .WithScriptsFromFileSystem
                 (
                     scriptFolderPath, new FileSystemScriptOptions
                     {
                         IncludeSubDirectories = true
                     }
-                );
-
-            var upgrader = upgradeBuilder
+                )
                 .WithTransactionPerScript()
-                .WithVariablesDisabled().LogToAutodetectedLog()
+                .WithVariablesDisabled()
                 .Build();
-            Console.WriteLine(upgrader);
+            //Console.WriteLine(upgrader);
             upgrader.PerformUpgrade();
         }
         public static void Main(string[] args)
